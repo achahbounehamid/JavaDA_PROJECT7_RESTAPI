@@ -1,6 +1,6 @@
-package com.nnk.springboot.repositories;
+package src.main.java.com.nnk.springboot.repositories;
 
-import com.nnk.springboot.domain.Trade;
+import src.main.java.com.nnk.springboot.domain.Trade;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 

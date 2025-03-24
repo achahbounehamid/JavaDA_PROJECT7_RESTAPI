@@ -1,4 +1,4 @@
-package com.nnk.springboot.domain;
+package src.main.java.com.nnk.springboot.domain;
 
 
 

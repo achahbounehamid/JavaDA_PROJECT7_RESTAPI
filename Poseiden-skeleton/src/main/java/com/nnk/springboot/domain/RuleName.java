@@ -1,8 +1,7 @@
-package com.nnk.springboot.domain;
+package src.main.java.com.nnk.springboot.domain;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import java.sql.Timestamp;
 
 @Entity
 @Table(name = "rulename")

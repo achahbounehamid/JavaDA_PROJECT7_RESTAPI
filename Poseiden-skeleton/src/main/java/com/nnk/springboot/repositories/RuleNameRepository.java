@@ -1,6 +1,6 @@
-package com.nnk.springboot.repositories;
+package src.main.java.com.nnk.springboot.repositories;
 
-import com.nnk.springboot.domain.RuleName;
+import src.main.java.com.nnk.springboot.domain.RuleName;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 
