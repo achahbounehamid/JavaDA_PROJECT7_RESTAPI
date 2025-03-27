@@ -1,10 +1,8 @@
-package src.main.java.com.nnk.springboot.domain;
+package com.nnk.springboot.domain;
 
-
-
-import javax.persistence.*;
-import javax.validation.constraints.Digits;
-import javax.validation.constraints.NotBlank;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.Digits;
+import jakarta.validation.constraints.NotBlank;
 import java.sql.Date;
 import java.sql.Timestamp;
 
@@ -32,7 +30,7 @@ public class BidList {
 
     private Double ask;
 
-    private String benchmrak;
+    private String benchmark;
 
     private Date bidListDate;
 
@@ -118,12 +116,12 @@ public class BidList {
         this.ask = ask;
     }
 
-    public String getBenchmrak() {
-        return benchmrak;
+    public String getBenchmark() {
+        return benchmark;
     }
 
-    public void setBenchmrak(String benchmrak) {
-        this.benchmrak = benchmrak;
+    public void setBenchmark(String benchmark) {
+        this.benchmark = benchmark;
     }
 
     public Date getBidListDate() {
