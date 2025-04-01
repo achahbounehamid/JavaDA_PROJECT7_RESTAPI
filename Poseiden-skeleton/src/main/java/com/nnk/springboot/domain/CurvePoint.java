@@ -7,9 +7,9 @@ import java.sql.Timestamp;
 @Entity
 @Table(name = "curvepoint")
 public class CurvePoint {
-    // TODO: Map columns in data table CURVEPOINT with corresponding java fields
+
     @Id
-    @GeneratedValue(strategy =  GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @NotNull(message = "CurveId is mandatory")
@@ -17,10 +17,12 @@ public class CurvePoint {
 
     private Timestamp asOfDate;
 
-    @NotNull(message = "term is mandatory")
+    @NotNull(message = "Term is mandatory")
+    @Digits(integer = 10, fraction = 2, message = "Term format is invalid")
     private Double term;
 
-    @NotNull(message =  "Value is mandatory")
+    @NotNull(message = "Value is mandatory")
+    @Digits(integer = 10, fraction = 2, message = "Value format is invalid")
     private Double value;
 
     private Timestamp creationDate;
@@ -33,12 +35,20 @@ public class CurvePoint {
         this.id = id;
     }
 
-    public Timestamp getCreationDate() {
-        return creationDate;
+    public Integer getCurveId() {
+        return curveId;
     }
 
-    public void setCreationDate(Timestamp creationDate) {
-        this.creationDate = creationDate;
+    public void setCurveId(Integer curveId) {
+        this.curveId = curveId;
+    }
+
+    public Timestamp getAsOfDate() {
+        return asOfDate;
+    }
+
+    public void setAsOfDate(Timestamp asOfDate) {
+        this.asOfDate = asOfDate;
     }
 
     public Double getTerm() {
@@ -57,19 +67,14 @@ public class CurvePoint {
         this.value = value;
     }
 
-    public Timestamp getAsOfDate() {
-        return asOfDate;
+    public Timestamp getCreationDate() {
+        return creationDate;
     }
 
-    public void setAsOfDate(Timestamp asOfDate) {
-        this.asOfDate = asOfDate;
-    }
-
-    public Integer getCurveId() {
-        return curveId;
-    }
-
-    public void setCurveId(Integer curveId) {
-        this.curveId = curveId;
+    public void setCreationDate(Timestamp creationDate) {
+        this.creationDate = creationDate;
     }
 }
+
+
+

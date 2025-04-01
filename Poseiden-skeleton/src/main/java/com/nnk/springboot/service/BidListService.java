@@ -26,6 +26,7 @@ public List<BidList> findAll() {
 
     //Sauvegarder une BidList
     public BidList save(BidList bidList){
+
     return  bidListRepository.save(bidList);
     }
 
