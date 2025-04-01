@@ -1,1 +1,4 @@
 com\nnk\springboot\controllerTest\BidListRestControllerTest.class
+com\nnk\springboot\controllerTest\TradeRestControllerTest.class
+com\nnk\springboot\controllerTest\CurvePointRestControllerTest.class
+com\nnk\springboot\controllerTest\RuleRestControllerTest.class

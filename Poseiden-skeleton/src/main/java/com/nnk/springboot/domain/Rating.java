@@ -23,6 +23,7 @@ public class Rating {
     @NotNull(message = "Order number is mandatory")
     private Integer orderNumber;
 
+
     public Integer getId() {
         return id;
     }
