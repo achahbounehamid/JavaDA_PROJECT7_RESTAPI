@@ -1,95 +1,78 @@
 //package com.nnk.springboot.serviceTest;
-//import static org.junit.jupiter.api.Assertions.*;
-//import static org.mockito.Mockito.*;
-//
-//import java.util.Arrays;
-//import java.util.List;
-//import java.util.Optional;
-//
-//import org.junit.jupiter.api.BeforeEach;
-//import org.junit.jupiter.api.Test;
-//import org.mockito.InjectMocks;
-//import org.mockito.Mock;
-//import org.mockito.MockitoAnnotations;
-//import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 //
 //import com.nnk.springboot.domain.User;
 //import com.nnk.springboot.repositories.UserRepository;
 //import com.nnk.springboot.service.UserService;
-//public class UserServiceTest {
+//import org.junit.jupiter.api.BeforeEach;
+//import org.junit.jupiter.api.Test;
+//import org.mockito.*;
+//import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+//
+//import java.util.*;
+//
+//import static org.junit.jupiter.api.Assertions.*;
+//import static org.mockito.Mockito.*;
+//
+//class UserServiceTest {
+//
+//    @InjectMocks
+//    private UserService userService;
+//
 //    @Mock
 //    private UserRepository userRepository;
 //
 //    @Mock
 //    private BCryptPasswordEncoder passwordEncoder;
 //
-//    @InjectMocks
-//    private UserService userService;
-//
 //    @BeforeEach
-//    public void setUp() {
+//    void setUp() {
 //        MockitoAnnotations.openMocks(this);
 //    }
 //
 //    @Test
-//    public void testSave() {
-//        // Arrange
+//    void testSaveUser() {
 //        User user = new User();
-//        user.setPassword("password");
-//        String encodedPassword = "encodedPassword";
-//        when(passwordEncoder.encode(user.getPassword())).thenReturn(encodedPassword);
-//        when(userRepository.save(user)).thenReturn(user);
+//        user.setUsername("john");
+//        user.setPassword("1234");
 //
-//        // Act
+//        when(passwordEncoder.encode("1234")).thenReturn("encoded1234");
+//        when(userRepository.save(any(User.class))).thenAnswer(invocation -> invocation.getArgument(0));
+//
 //        User savedUser = userService.save(user);
 //
-//        // Assert
-//        assertEquals(encodedPassword, savedUser.getPassword());
-//        verify(passwordEncoder, times(1)).encode(user.getPassword());
+//        assertEquals("encoded1234", savedUser.getPassword());
 //        verify(userRepository, times(1)).save(user);
 //    }
 //
 //    @Test
-//    public void testFindAll() {
-//        // Arrange
-//        User user1 = new User();
-//        User user2 = new User();
-//        List<User> expectedUsers = Arrays.asList(user1, user2);
-//        when(userRepository.findAll()).thenReturn(expectedUsers);
+//    void testFindAll() {
+//        List<User> mockUsers = Arrays.asList(new User(), new User());
+//        when(userRepository.findAll()).thenReturn(mockUsers);
 //
-//        // Act
-//        List<User> actualUsers = userService.findAll();
+//        List<User> result = userService.findAll();
 //
-//        // Assert
-//        assertEquals(expectedUsers, actualUsers);
+//        assertEquals(2, result.size());
 //        verify(userRepository, times(1)).findAll();
 //    }
 //
 //    @Test
-//    public void testFindById() {
-//        // Arrange
-//        Integer id = 1;
-//        User expectedUser = new User();
-//        when(userRepository.findById(id)).thenReturn(Optional.of(expectedUser));
+//    void testFindById() {
+//        User user = new User();
+//        user.setId(1);
+//        when(userRepository.findById(1)).thenReturn(Optional.of(user));
 //
-//        // Act
-//        Optional<User> actualUser = userService.findById(id);
+//        Optional<User> found = userService.findById(1);
 //
-//        // Assert
-//        assertTrue(actualUser.isPresent());
-//        assertEquals(expectedUser, actualUser.get());
-//        verify(userRepository, times(1)).findById(id);
+//        assertTrue(found.isPresent());
+//        assertEquals(1, found.get().getId());
 //    }
 //
 //    @Test
-//    public void testDeleteById() {
-//        // Arrange
-//        Integer id = 1;
+//    void testDeleteById() {
+//        doNothing().when(userRepository).deleteById(1);
 //
-//        // Act
-//        userService.deleteById(id);
+//        userService.deleteById(1);
 //
-//        // Assert
-//        verify(userRepository, times(1)).deleteById(id);
+//        verify(userRepository, times(1)).deleteById(1);
 //    }
 //}

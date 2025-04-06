@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import java.security.Principal;
 
 @Controller
 @RequestMapping("/bidList")
@@ -19,8 +20,9 @@ public class BidListViewController {
     private BidListService bidListService;
 
     @GetMapping("/list")
-    public String home(Model model) {
+    public String home(Model model, Principal principal) {
         model.addAttribute("bidLists", bidListService.findAll());
+        model.addAttribute("username", principal.getName());
         return "bidList/list";
     }
 

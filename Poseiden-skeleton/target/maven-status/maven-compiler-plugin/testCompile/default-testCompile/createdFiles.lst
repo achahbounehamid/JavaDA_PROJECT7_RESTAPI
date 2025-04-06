@@ -1,10 +1,1 @@
-com\nnk\springboot\controllerTest\TradeRestControllerTest.class
-com\nnk\springboot\serviceTest\CurvePointServiceTest.class
-com\nnk\springboot\controllerTest\BidListRestControllerTest.class
-com\nnk\springboot\controllerTest\CurvePointRestControllerTest.class
-com\nnk\springboot\serviceTest\BidListServiceTest.class
-com\nnk\springboot\serviceTest\RuleServiceTest.class
-com\nnk\springboot\controllerTest\RatingRestControllerTest.class
-com\nnk\springboot\controllerTest\RuleRestControllerTest.class
-com\nnk\springboot\serviceTest\RatingServiceTest.class
-com\nnk\springboot\serviceTest\TradeServiceTest.class
+com\nnk\springboot\PasswordEncoderTest.class

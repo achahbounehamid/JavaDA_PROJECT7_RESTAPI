@@ -15,6 +15,7 @@ com\nnk\springboot\repositories\UserRepository.class
 com\nnk\springboot\domain\CurvePoint.class
 com\nnk\springboot\domain\Rule.class
 com\nnk\springboot\controller\rest\BidListRestController.class
+com\nnk\springboot\service\CustomUserDetailsService.class
 com\nnk\springboot\controller\view\RuleViewController.class
 com\nnk\springboot\repositories\RuleRepository.class
 com\nnk\springboot\controller\rest\HomeController.class
