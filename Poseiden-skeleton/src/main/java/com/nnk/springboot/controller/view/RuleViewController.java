@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/ruleName")
+@RequestMapping("/rule")
 public class RuleViewController {
 
     @Autowired
@@ -22,21 +22,21 @@ public class RuleViewController {
     @GetMapping("/list")
     public String home(Model model) {
         model.addAttribute("rules", ruleService.findAll());
-        return "ruleName/list";
+        return "rule/list";
     }
 
     @GetMapping("/add")
     public String showAddForm(Rule rule) {
-        return "ruleName/add";
+        return "rule/add";
     }
 
     @PostMapping("/validate")
     public String validate(@Valid Rule rule, BindingResult result, Model model) {
         if (result.hasErrors()) {
-            return "ruleName/add";
+            return "rule/add";
         }
         ruleService.save(rule);
-        return "redirect:/ruleName/list";
+        return "redirect:/rule/list";
     }
 
     @GetMapping("/update/{id}")
@@ -44,23 +44,23 @@ public class RuleViewController {
         Rule rule = ruleService.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid rule ID: " + id));
         model.addAttribute("rule", rule);
-        return "ruleName/update";
+        return "rule/update";
     }
 
     @PostMapping("/update/{id}")
     public String update(@PathVariable Integer id, @Valid Rule rule, BindingResult result) {
         if (result.hasErrors()) {
-            return "ruleName/update";
+            return "rule/update";
         }
         rule.setId(id);
         ruleService.save(rule);
-        return "redirect:/ruleName/list";
+        return "redirect:/rule/list";
     }
 
     @GetMapping("/delete/{id}")
     public String delete(@PathVariable Integer id) {
         ruleService.deleteById(id);
-        return "redirect:/ruleName/list";
+        return "redirect:/rule/list";
     }
 }
 

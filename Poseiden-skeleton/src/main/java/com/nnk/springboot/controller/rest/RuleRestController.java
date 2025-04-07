@@ -13,7 +13,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/ruleName")
+@RequestMapping("/api/rule")
 public class RuleRestController {
 
     @Autowired
