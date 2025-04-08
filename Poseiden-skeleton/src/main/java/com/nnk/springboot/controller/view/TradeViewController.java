@@ -21,6 +21,7 @@ public class TradeViewController {
 
     @GetMapping("/list")
     public String listTrades(Model model) {
+
         model.addAttribute("trades", tradeService.findAll());
         return "trade/list";
     }

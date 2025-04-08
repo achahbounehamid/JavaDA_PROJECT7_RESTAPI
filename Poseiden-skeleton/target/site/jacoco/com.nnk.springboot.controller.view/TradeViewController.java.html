@@ -21,47 +21,48 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
     @GetMapping(&quot;/list&quot;)
     public String listTrades(Model model) {
-<span class="nc" id="L24">        model.addAttribute(&quot;trades&quot;, tradeService.findAll());</span>
-<span class="nc" id="L25">        return &quot;trade/list&quot;;</span>
+
+<span class="nc" id="L25">        model.addAttribute(&quot;trades&quot;, tradeService.findAll());</span>
+<span class="nc" id="L26">        return &quot;trade/list&quot;;</span>
     }
 
     @GetMapping(&quot;/add&quot;)
     public String showAddForm(Trade trade) {
-<span class="nc" id="L30">        return &quot;trade/add&quot;;</span>
+<span class="nc" id="L31">        return &quot;trade/add&quot;;</span>
     }
 
     @PostMapping(&quot;/validate&quot;)
     public String validate(@Valid Trade trade, BindingResult result, Model model) {
-<span class="nc bnc" id="L35" title="All 2 branches missed.">        if (result.hasErrors()) {</span>
-<span class="nc" id="L36">            return &quot;trade/add&quot;;</span>
+<span class="nc bnc" id="L36" title="All 2 branches missed.">        if (result.hasErrors()) {</span>
+<span class="nc" id="L37">            return &quot;trade/add&quot;;</span>
         }
-<span class="nc" id="L38">        tradeService.save(trade);</span>
-<span class="nc" id="L39">        return &quot;redirect:/trade/list&quot;;</span>
+<span class="nc" id="L39">        tradeService.save(trade);</span>
+<span class="nc" id="L40">        return &quot;redirect:/trade/list&quot;;</span>
     }
 
     @GetMapping(&quot;/update/{id}&quot;)
     public String showUpdateForm(@PathVariable Integer id, Model model) {
-<span class="nc" id="L44">        Trade trade = tradeService.findById(id)</span>
-<span class="nc" id="L45">                .orElseThrow(() -&gt; new IllegalArgumentException(&quot;Invalid trade Id:&quot; + id));</span>
-<span class="nc" id="L46">        model.addAttribute(&quot;trade&quot;, trade);</span>
-<span class="nc" id="L47">        return &quot;trade/update&quot;;</span>
+<span class="nc" id="L45">        Trade trade = tradeService.findById(id)</span>
+<span class="nc" id="L46">                .orElseThrow(() -&gt; new IllegalArgumentException(&quot;Invalid trade Id:&quot; + id));</span>
+<span class="nc" id="L47">        model.addAttribute(&quot;trade&quot;, trade);</span>
+<span class="nc" id="L48">        return &quot;trade/update&quot;;</span>
     }
 
     @PostMapping(&quot;/update/{id}&quot;)
     public String updateTrade(@PathVariable Integer id, @Valid Trade trade,
                               BindingResult result, Model model) {
-<span class="nc bnc" id="L53" title="All 2 branches missed.">        if (result.hasErrors()) {</span>
-<span class="nc" id="L54">            return &quot;trade/update&quot;;</span>
+<span class="nc bnc" id="L54" title="All 2 branches missed.">        if (result.hasErrors()) {</span>
+<span class="nc" id="L55">            return &quot;trade/update&quot;;</span>
         }
-<span class="nc" id="L56">        trade.setTradeId(id);</span>
-<span class="nc" id="L57">        tradeService.save(trade);</span>
-<span class="nc" id="L58">        return &quot;redirect:/trade/list&quot;;</span>
+<span class="nc" id="L57">        trade.setTradeId(id);</span>
+<span class="nc" id="L58">        tradeService.save(trade);</span>
+<span class="nc" id="L59">        return &quot;redirect:/trade/list&quot;;</span>
     }
 
     @GetMapping(&quot;/delete/{id}&quot;)
     public String deleteTrade(@PathVariable Integer id) {
-<span class="nc" id="L63">        tradeService.deleteById(id);</span>
-<span class="nc" id="L64">        return &quot;redirect:/trade/list&quot;;</span>
+<span class="nc" id="L64">        tradeService.deleteById(id);</span>
+<span class="nc" id="L65">        return &quot;redirect:/trade/list&quot;;</span>
     }
 }
 
