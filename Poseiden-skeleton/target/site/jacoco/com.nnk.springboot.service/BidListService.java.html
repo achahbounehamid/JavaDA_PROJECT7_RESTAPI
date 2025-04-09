@@ -16,23 +16,23 @@ import java.util.Optional;
 // Récupérer toutes les bidList
 public List&lt;BidList&gt; findAll() {
 
-<span class="nc" id="L19">    return bidListRepository.findAll();</span>
+<span class="fc" id="L19">    return bidListRepository.findAll();</span>
 }
 
    //trouver une BidList par ID
     public Optional&lt;BidList&gt; findById(Integer id){
-<span class="nc" id="L24">    return  bidListRepository.findById(id);</span>
+<span class="fc" id="L24">    return  bidListRepository.findById(id);</span>
     }
 
     //Sauvegarder une BidList
     public BidList save(BidList bidList){
 
-<span class="nc" id="L30">    return  bidListRepository.save(bidList);</span>
+<span class="fc" id="L30">    return  bidListRepository.save(bidList);</span>
     }
 
     //Supprimer une badList par ID
     public void deleteById(Integer id){
-<span class="nc" id="L35">     bidListRepository.deleteById(id);</span>
-<span class="nc" id="L36">    }</span>
+<span class="fc" id="L35">     bidListRepository.deleteById(id);</span>
+<span class="fc" id="L36">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

@@ -1,6 +1,7 @@
 package com.nnk.springboot.domain;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
 
 import javax.validation.constraints.NotNull;
 
@@ -8,6 +9,7 @@ import javax.validation.constraints.NotNull;
 @Table(name = "rule")
 public class Rule {
    @Id
+   @Min(1)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 

@@ -9,22 +9,31 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;
-
+/**
+ * Service personnalisé utilisé par Spring Security pour authentifier les utilisateurs
+ * à partir de la base de données.
+ */
 @Service
-<span class="fc" id="L14">public class CustomUserDetailsService implements UserDetailsService {</span>
+<span class="nc" id="L17">public class CustomUserDetailsService implements UserDetailsService {</span>
 
     @Autowired
     private UserRepository userRepository;
-
+    /**
+     * Charge un utilisateur par son nom d'utilisateur.
+     *
+     * @param username le nom d'utilisateur
+     * @return l'utilisateur avec ses rôles
+     * @throws UsernameNotFoundException si l'utilisateur n'existe pas
+     */
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-<span class="nc" id="L21">        com.nnk.springboot.domain.User user = userRepository.findByUsername(username)</span>
-<span class="nc" id="L22">                .orElseThrow(() -&gt; new UsernameNotFoundException(&quot;User not found&quot;));</span>
+<span class="nc" id="L30">        com.nnk.springboot.domain.User user = userRepository.findByUsername(username)</span>
+<span class="nc" id="L31">                .orElseThrow(() -&gt; new UsernameNotFoundException(&quot;User not found&quot;));</span>
 
-<span class="nc" id="L24">        return new org.springframework.security.core.userdetails.User(</span>
-<span class="nc" id="L25">                user.getUsername(),</span>
-<span class="nc" id="L26">                user.getPassword(),</span>
-<span class="nc" id="L27">                Collections.singletonList(new SimpleGrantedAuthority(&quot;ROLE_&quot; + user.getRole()))</span>
+<span class="nc" id="L33">        return new org.springframework.security.core.userdetails.User(</span>
+<span class="nc" id="L34">                user.getUsername(),</span>
+<span class="nc" id="L35">                user.getPassword(),</span>
+<span class="nc" id="L36">                Collections.singletonList(new SimpleGrantedAuthority(&quot;ROLE_&quot; + user.getRole()))</span>
         );
     }
 }

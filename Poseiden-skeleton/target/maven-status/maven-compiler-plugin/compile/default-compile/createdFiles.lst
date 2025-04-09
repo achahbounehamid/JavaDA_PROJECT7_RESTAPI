@@ -9,6 +9,7 @@ com\nnk\springboot\controller\rest\RatingRestController.class
 com\nnk\springboot\controller\rest\CurvePointRestController.class
 com\nnk\springboot\domain\Trade.class
 com\nnk\springboot\controller\rest\RuleRestController.class
+com\nnk\springboot\controller\view\ErrorController.class
 com\nnk\springboot\controller\rest\TradeRestController.class
 com\nnk\springboot\service\RatingService.class
 com\nnk\springboot\repositories\UserRepository.class

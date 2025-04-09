@@ -9,6 +9,7 @@ import java.sql.Timestamp;
 public class CurvePoint {
 
     @Id
+    @Min(1)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 

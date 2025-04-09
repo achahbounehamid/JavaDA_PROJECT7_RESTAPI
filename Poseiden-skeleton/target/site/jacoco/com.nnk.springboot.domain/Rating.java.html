@@ -5,9 +5,10 @@ import javax.validation.constraints.*;
 
 @Entity
 @Table(name = &quot;rating&quot;)
-<span class="fc" id="L8">public class Rating {</span>
+<span class="nc" id="L8">public class Rating {</span>
 
     @Id
+    @Min(1)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
@@ -25,43 +26,43 @@ import javax.validation.constraints.*;
 
 
     public Integer getId() {
-<span class="nc" id="L28">        return id;</span>
+<span class="nc" id="L29">        return id;</span>
     }
 
     public void setId(Integer id) {
-<span class="nc" id="L32">        this.id = id;</span>
-<span class="nc" id="L33">    }</span>
+<span class="nc" id="L33">        this.id = id;</span>
+<span class="nc" id="L34">    }</span>
 
     public String getMoodysRating() {
-<span class="nc" id="L36">        return moodysRating;</span>
+<span class="nc" id="L37">        return moodysRating;</span>
     }
 
     public void setMoodysRating(String moodysRating) {
-<span class="nc" id="L40">        this.moodysRating = moodysRating;</span>
-<span class="nc" id="L41">    }</span>
+<span class="nc" id="L41">        this.moodysRating = moodysRating;</span>
+<span class="nc" id="L42">    }</span>
 
     public String getSandPRating() {
-<span class="nc" id="L44">        return sandPRating;</span>
+<span class="nc" id="L45">        return sandPRating;</span>
     }
 
     public void setSandPRating(String sandPRating) {
-<span class="nc" id="L48">        this.sandPRating = sandPRating;</span>
-<span class="nc" id="L49">    }</span>
+<span class="nc" id="L49">        this.sandPRating = sandPRating;</span>
+<span class="nc" id="L50">    }</span>
 
     public String getFitchRating() {
-<span class="nc" id="L52">        return fitchRating;</span>
+<span class="nc" id="L53">        return fitchRating;</span>
     }
 
     public void setFitchRating(String fitchRating) {
-<span class="nc" id="L56">        this.fitchRating = fitchRating;</span>
-<span class="nc" id="L57">    }</span>
+<span class="nc" id="L57">        this.fitchRating = fitchRating;</span>
+<span class="nc" id="L58">    }</span>
 
     public Integer getOrderNumber() {
-<span class="nc" id="L60">        return orderNumber;</span>
+<span class="nc" id="L61">        return orderNumber;</span>
     }
 
     public void setOrderNumber(Integer orderNumber) {
-<span class="nc" id="L64">        this.orderNumber = orderNumber;</span>
-<span class="nc" id="L65">    }</span>
+<span class="nc" id="L65">        this.orderNumber = orderNumber;</span>
+<span class="nc" id="L66">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

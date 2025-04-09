@@ -7,10 +7,15 @@ import javax.validation.constraints.*;
 @Table(name = "users")
 public class User {
     @Id
+    @Min(1)
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Integer id;
     @NotBlank(message = "Username is mandatory")
     private String username;
+    @Pattern(
+            regexp = "^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$",
+            message = "Le mot de passe doit contenir au moins 8 caractères, une majuscule, un chiffre et un symbole."
+    )
     @NotBlank(message = "Password is mandatory")
     private String password;
     @NotBlank(message = "FullName is mandatory")

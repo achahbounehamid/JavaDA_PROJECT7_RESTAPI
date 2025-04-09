@@ -2,6 +2,7 @@ package com.nnk.springboot.domain;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Digits;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import java.sql.Date;
 import java.sql.Timestamp;
@@ -12,6 +13,7 @@ public class BidList {
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Min(1)
     private  Integer bidListId;
 
     @NotBlank(message = "ACCOUNT est obligatoire")

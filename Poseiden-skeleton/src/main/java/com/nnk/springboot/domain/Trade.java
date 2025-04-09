@@ -9,6 +9,7 @@ import java.sql.Timestamp;
 public class Trade {
 
     @Id
+    @Min(1)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer tradeId;
 

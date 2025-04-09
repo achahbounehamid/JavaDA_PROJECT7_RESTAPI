@@ -6,9 +6,10 @@ import java.sql.Timestamp;
 
 @Entity
 @Table(name = &quot;curvepoint&quot;)
-<span class="fc" id="L9">public class CurvePoint {</span>
+<span class="nc" id="L9">public class CurvePoint {</span>
 
     @Id
+    @Min(1)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
@@ -28,52 +29,52 @@ import java.sql.Timestamp;
     private Timestamp creationDate;
 
     public Integer getId() {
-<span class="nc" id="L31">        return id;</span>
+<span class="nc" id="L32">        return id;</span>
     }
 
     public void setId(Integer id) {
-<span class="nc" id="L35">        this.id = id;</span>
-<span class="nc" id="L36">    }</span>
+<span class="nc" id="L36">        this.id = id;</span>
+<span class="nc" id="L37">    }</span>
 
     public Integer getCurveId() {
-<span class="nc" id="L39">        return curveId;</span>
+<span class="nc" id="L40">        return curveId;</span>
     }
 
     public void setCurveId(Integer curveId) {
-<span class="nc" id="L43">        this.curveId = curveId;</span>
-<span class="nc" id="L44">    }</span>
+<span class="nc" id="L44">        this.curveId = curveId;</span>
+<span class="nc" id="L45">    }</span>
 
     public Timestamp getAsOfDate() {
-<span class="nc" id="L47">        return asOfDate;</span>
+<span class="nc" id="L48">        return asOfDate;</span>
     }
 
     public void setAsOfDate(Timestamp asOfDate) {
-<span class="nc" id="L51">        this.asOfDate = asOfDate;</span>
-<span class="nc" id="L52">    }</span>
+<span class="nc" id="L52">        this.asOfDate = asOfDate;</span>
+<span class="nc" id="L53">    }</span>
 
     public Double getTerm() {
-<span class="nc" id="L55">        return term;</span>
+<span class="nc" id="L56">        return term;</span>
     }
 
     public void setTerm(Double term) {
-<span class="nc" id="L59">        this.term = term;</span>
-<span class="nc" id="L60">    }</span>
+<span class="nc" id="L60">        this.term = term;</span>
+<span class="nc" id="L61">    }</span>
 
     public Double getValue() {
-<span class="nc" id="L63">        return value;</span>
+<span class="nc" id="L64">        return value;</span>
     }
 
     public void setValue(Double value) {
-<span class="nc" id="L67">        this.value = value;</span>
-<span class="nc" id="L68">    }</span>
+<span class="nc" id="L68">        this.value = value;</span>
+<span class="nc" id="L69">    }</span>
 
     public Timestamp getCreationDate() {
-<span class="nc" id="L71">        return creationDate;</span>
+<span class="nc" id="L72">        return creationDate;</span>
     }
 
     public void setCreationDate(Timestamp creationDate) {
-<span class="nc" id="L75">        this.creationDate = creationDate;</span>
-<span class="nc" id="L76">    }</span>
+<span class="nc" id="L76">        this.creationDate = creationDate;</span>
+<span class="nc" id="L77">    }</span>
 }
 
 

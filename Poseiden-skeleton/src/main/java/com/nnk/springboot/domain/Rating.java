@@ -8,6 +8,7 @@ import javax.validation.constraints.*;
 public class Rating {
 
     @Id
+    @Min(1)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
