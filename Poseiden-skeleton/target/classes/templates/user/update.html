@@ -3,59 +3,67 @@
 	  xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="utf-8"/>
-	<title>Home</title>
-	<link rel="stylesheet" href="../../css/bootstrap.min.css" >
+	<title>Update User</title>
+	<link rel="stylesheet" href="../../css/bootstrap.min.css">
 </head>
 <body>
-<div class="container">
+<div class="container-fluid vh-100">
+	<div class="row h-100">
+		<div class="col-md-4 d-flex flex-column justify-content-center align-items-center bg-dark text-white">
+			<h2 class="text-center">User Interface<br/>Functionality</h2>
+			<p class="mt-3">User 7.2</p>
+		</div>
 
-	<div class="row">
-		<h2>Update User</h2>
+		<div class="col-md-8 d-flex flex-column justify-content-start align-items-center position-relative p-4">
+			<h3 class="mb-4 text-center">Update User Screen</h3>
+			<div class="w-100" style="max-width: 500px;">
+				<h4 class="mb-3">Update User</h4>
+				<form th:action="@{/user/update/{id}(id=${user.id})}" th:object="${user}" method="post">
+					<div class="mb-3">
+						<label for="fullname" class="form-label">Full Name</label>
+						<input type="text" th:field="*{fullname}" id="fullname" class="form-control" placeholder="Full Name">
+						<p class="text-danger" th:if="${#fields.hasErrors('fullname')}" th:errors="*{fullname}"></p>
+					</div>
+
+					<div class="mb-3">
+						<label for="username" class="form-label">User Name</label>
+						<input type="text" th:field="*{username}" id="username" class="form-control" placeholder="User Name">
+						<p class="text-danger" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></p>
+					</div>
+
+					<div class="mb-3">
+						<label for="password" class="form-label">Password</label>
+						<input type="password" th:field="*{password}" id="password" class="form-control" placeholder="Password">
+						<p class="text-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></p>
+					</div>
+
+					<div class="mb-4">
+						<label class="form-label">Role</label><br>
+						<div>
+							<label class="form-check-label me-3">
+								<input class="form-check-input" type="radio" th:field="*{role}" th:value="ADMIN"> Admin
+							</label>
+							<label class="form-check-label">
+								<input class="form-check-input" type="radio" th:field="*{role}" th:value="USER"> User
+							</label>
+						</div>
+					</div>
+
+					<input type="hidden" th:field="*{id}" />
+
+					<div class="d-flex justify-content-start gap-2">
+						<a class="btn btn-danger" href="/user/list">Cancel</a>
+						<input class="btn btn-primary" type="submit" value="Update User">
+					</div>
+				</form>
+			</div>
+
+			<!-- Logo -->
+			<div class="position-absolute bottom-0 end-0 m-3">
+				<img src="/images/logo.png" alt="Poseidon Logo" style="height: 50px;">
+			</div>
+		</div>
 	</div>
-
-	<div class="row">
-		<form action="#" th:action="@{/user/update/{id}(id=${user.id})}" th:object="${user}" method="post" class="form-horizontal" style="width: 100%">
-			<div class="form-group">
-				<label for="fullname" class="col-sm-2 control-label">Full Name</label>
-				<div class="col-sm-10">
-					<input type="text" th:field="*{fullname}" id="fullname" placeholder="Full Name" class="col-4">
-					<p class="text-danger" th:if="${#fields.hasErrors('fullname')}" th:errors="*{fullname}"></p>
-				</div>
-			</div>
-			<div class="form-group">
-				<label for="username" class="col-sm-2 control-label">User Name</label>
-				<div class="col-sm-10">
-					<input type="text" th:field="*{username}" id="username" placeholder="User Name" class="col-4">
-					<p class="text-danger" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></p>
-				</div>
-			</div>
-			<div class="form-group">
-				<label for="password" class="col-sm-2 control-label">Password</label>
-				<div class="col-sm-10">
-					<input type="password" th:field="*{password}" id="password" placeholder="Password" class="col-4">
-					<p class="text-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></p>
-				</div>
-			</div>
-			<div class="form-group">
-				<label for="password" class="col-sm-2 control-label">Role</label>
-				<div class="col-sm-10">
-					<label class="checkbox-inline"><input type="radio" th:field="*{role}" th:value="ADMIN">Admin</label>
-					<label class="checkbox-inline"><input type="radio" th:field="*{role}" th:value="USER">User</label>
-				</div>
-			</div>
-
-
-			<div class="form-group">
-				<div class="col-sm-12">
-					<input type="hidden" th:field="*{id}">
-					<a class="btn btn-danger btn-sm" href="/user/list">Cancel</a>
-					<input class="btn btn-primary btn-sm" type="submit" value="Update User">
-				</div>
-			</div>
-
-		</form>
-	</div>
-
 </div>
 </body>
 </html>

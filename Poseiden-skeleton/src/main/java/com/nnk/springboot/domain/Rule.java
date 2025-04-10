@@ -2,7 +2,6 @@ package com.nnk.springboot.domain;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
-
 import javax.validation.constraints.NotNull;
 
 @Entity

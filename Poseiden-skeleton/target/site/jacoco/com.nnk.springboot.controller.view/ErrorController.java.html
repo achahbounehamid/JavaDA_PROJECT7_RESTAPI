@@ -7,11 +7,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.ui.Model;
 @Controller
 <span class="nc" id="L9">public class ErrorController {</span>
-
     @GetMapping(&quot;/app/error&quot;)
     public String error403(Model model, HttpServletRequest request) {
-<span class="nc" id="L13">        model.addAttribute(&quot;errorMsg&quot;, &quot;You are not authorized to access this page.&quot;);</span>
-<span class="nc" id="L14">        return &quot;403&quot;;</span>
+<span class="nc" id="L12">        model.addAttribute(&quot;errorMsg&quot;, &quot;You are not authorized to access this page.&quot;);</span>
+<span class="nc" id="L13">        return &quot;403&quot;;</span>
     }
 }
 

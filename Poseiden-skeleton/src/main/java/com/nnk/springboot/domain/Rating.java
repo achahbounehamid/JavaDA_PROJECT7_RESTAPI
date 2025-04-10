@@ -2,6 +2,7 @@ package com.nnk.springboot.domain;
 
 import jakarta.persistence.*;
 import javax.validation.constraints.*;
+import jakarta.validation.constraints.Min;
 
 @Entity
 @Table(name = "rating")

@@ -70,13 +70,13 @@ import java.util.Optional;
 
     }
 
-    @GetMapping(&quot;error&quot;)
-    public ModelAndView error() {
-<span class="nc" id="L75">        ModelAndView mav = new ModelAndView();</span>
-<span class="nc" id="L76">        String errorMessage= &quot;You are not authorized for the requested data.&quot;;</span>
-<span class="nc" id="L77">        mav.addObject(&quot;errorMsg&quot;, errorMessage);</span>
-<span class="nc" id="L78">        mav.setViewName(&quot;403&quot;);</span>
-<span class="nc" id="L79">        return mav;</span>
-    }
+//    @GetMapping(&quot;error&quot;)
+//    public ModelAndView error() {
+//        ModelAndView mav = new ModelAndView();
+//        String errorMessage= &quot;You are not authorized for the requested data.&quot;;
+//        mav.addObject(&quot;errorMsg&quot;, errorMessage);
+//        mav.setViewName(&quot;403&quot;);
+//        return mav;
+//    }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

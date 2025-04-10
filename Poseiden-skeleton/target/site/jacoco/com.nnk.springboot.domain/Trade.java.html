@@ -3,10 +3,11 @@
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import java.sql.Timestamp;
+import jakarta.validation.constraints.Min;
 
 @Entity
 @Table(name = &quot;trade&quot;)
-<span class="nc" id="L9">public class Trade {</span>
+<span class="nc" id="L10">public class Trade {</span>
 
     @Id
     @Min(1)
@@ -61,171 +62,171 @@ import java.sql.Timestamp;
 
 
     public Integer getTradeId() {
-<span class="nc" id="L64">        return tradeId;</span>
+<span class="nc" id="L65">        return tradeId;</span>
     }
 
     public void setTradeId(Integer tradeId) {
-<span class="nc" id="L68">        this.tradeId = tradeId;</span>
-<span class="nc" id="L69">    }</span>
+<span class="nc" id="L69">        this.tradeId = tradeId;</span>
+<span class="nc" id="L70">    }</span>
 
     public String getAccount() {
-<span class="nc" id="L72">        return account;</span>
+<span class="nc" id="L73">        return account;</span>
     }
 
     public void setAccount(String account) {
-<span class="nc" id="L76">        this.account = account;</span>
-<span class="nc" id="L77">    }</span>
+<span class="nc" id="L77">        this.account = account;</span>
+<span class="nc" id="L78">    }</span>
 
     public String getType() {
-<span class="nc" id="L80">        return type;</span>
+<span class="nc" id="L81">        return type;</span>
     }
 
     public void setType(String type) {
-<span class="nc" id="L84">        this.type = type;</span>
-<span class="nc" id="L85">    }</span>
+<span class="nc" id="L85">        this.type = type;</span>
+<span class="nc" id="L86">    }</span>
 
     public Double getBuyQuantity() {
-<span class="nc" id="L88">        return buyQuantity;</span>
+<span class="nc" id="L89">        return buyQuantity;</span>
     }
 
     public void setBuyQuantity(Double buyQuantity) {
-<span class="nc" id="L92">        this.buyQuantity = buyQuantity;</span>
-<span class="nc" id="L93">    }</span>
+<span class="nc" id="L93">        this.buyQuantity = buyQuantity;</span>
+<span class="nc" id="L94">    }</span>
 
     public Double getSellQuantity() {
-<span class="nc" id="L96">        return sellQuantity;</span>
+<span class="nc" id="L97">        return sellQuantity;</span>
     }
 
     public void setSellQuantity(Double sellQuantity) {
-<span class="nc" id="L100">        this.sellQuantity = sellQuantity;</span>
-<span class="nc" id="L101">    }</span>
+<span class="nc" id="L101">        this.sellQuantity = sellQuantity;</span>
+<span class="nc" id="L102">    }</span>
 
     public Double getBuyPrice() {
-<span class="nc" id="L104">        return buyPrice;</span>
+<span class="nc" id="L105">        return buyPrice;</span>
     }
 
     public void setBuyPrice(Double buyPrice) {
-<span class="nc" id="L108">        this.buyPrice = buyPrice;</span>
-<span class="nc" id="L109">    }</span>
+<span class="nc" id="L109">        this.buyPrice = buyPrice;</span>
+<span class="nc" id="L110">    }</span>
 
     public Double getSellPrice() {
-<span class="nc" id="L112">        return sellPrice;</span>
+<span class="nc" id="L113">        return sellPrice;</span>
     }
 
     public void setSellPrice(Double sellPrice) {
-<span class="nc" id="L116">        this.sellPrice = sellPrice;</span>
-<span class="nc" id="L117">    }</span>
+<span class="nc" id="L117">        this.sellPrice = sellPrice;</span>
+<span class="nc" id="L118">    }</span>
 
     public String getBenchmark() {
-<span class="nc" id="L120">        return benchmark;</span>
+<span class="nc" id="L121">        return benchmark;</span>
     }
 
     public void setBenchmark(String benchmark) {
-<span class="nc" id="L124">        this.benchmark = benchmark;</span>
-<span class="nc" id="L125">    }</span>
+<span class="nc" id="L125">        this.benchmark = benchmark;</span>
+<span class="nc" id="L126">    }</span>
 
     public Timestamp getTradeDate() {
-<span class="nc" id="L128">        return tradeDate;</span>
+<span class="nc" id="L129">        return tradeDate;</span>
     }
 
     public void setTradeDate(Timestamp tradeDate) {
-<span class="nc" id="L132">        this.tradeDate = tradeDate;</span>
-<span class="nc" id="L133">    }</span>
+<span class="nc" id="L133">        this.tradeDate = tradeDate;</span>
+<span class="nc" id="L134">    }</span>
 
     public String getSecurity() {
-<span class="nc" id="L136">        return security;</span>
+<span class="nc" id="L137">        return security;</span>
     }
 
     public void setSecurity(String security) {
-<span class="nc" id="L140">        this.security = security;</span>
-<span class="nc" id="L141">    }</span>
+<span class="nc" id="L141">        this.security = security;</span>
+<span class="nc" id="L142">    }</span>
 
     public String getStatus() {
-<span class="nc" id="L144">        return status;</span>
+<span class="nc" id="L145">        return status;</span>
     }
 
     public void setStatus(String status) {
-<span class="nc" id="L148">        this.status = status;</span>
-<span class="nc" id="L149">    }</span>
+<span class="nc" id="L149">        this.status = status;</span>
+<span class="nc" id="L150">    }</span>
 
     public String getTrader() {
-<span class="nc" id="L152">        return trader;</span>
+<span class="nc" id="L153">        return trader;</span>
     }
 
     public void setTrader(String trader) {
-<span class="nc" id="L156">        this.trader = trader;</span>
-<span class="nc" id="L157">    }</span>
+<span class="nc" id="L157">        this.trader = trader;</span>
+<span class="nc" id="L158">    }</span>
 
     public String getBook() {
-<span class="nc" id="L160">        return book;</span>
+<span class="nc" id="L161">        return book;</span>
     }
 
     public void setBook(String book) {
-<span class="nc" id="L164">        this.book = book;</span>
-<span class="nc" id="L165">    }</span>
+<span class="nc" id="L165">        this.book = book;</span>
+<span class="nc" id="L166">    }</span>
 
     public String getCreationName() {
-<span class="nc" id="L168">        return creationName;</span>
+<span class="nc" id="L169">        return creationName;</span>
     }
 
     public void setCreationName(String creationName) {
-<span class="nc" id="L172">        this.creationName = creationName;</span>
-<span class="nc" id="L173">    }</span>
+<span class="nc" id="L173">        this.creationName = creationName;</span>
+<span class="nc" id="L174">    }</span>
 
     public Timestamp getCreationDate() {
-<span class="nc" id="L176">        return creationDate;</span>
+<span class="nc" id="L177">        return creationDate;</span>
     }
 
     public void setCreationDate(Timestamp creationDate) {
-<span class="nc" id="L180">        this.creationDate = creationDate;</span>
-<span class="nc" id="L181">    }</span>
+<span class="nc" id="L181">        this.creationDate = creationDate;</span>
+<span class="nc" id="L182">    }</span>
 
     public String getRevisionName() {
-<span class="nc" id="L184">        return revisionName;</span>
+<span class="nc" id="L185">        return revisionName;</span>
     }
 
     public void setRevisionName(String revisionName) {
-<span class="nc" id="L188">        this.revisionName = revisionName;</span>
-<span class="nc" id="L189">    }</span>
+<span class="nc" id="L189">        this.revisionName = revisionName;</span>
+<span class="nc" id="L190">    }</span>
 
     public Timestamp getRevisionDate() {
-<span class="nc" id="L192">        return revisionDate;</span>
+<span class="nc" id="L193">        return revisionDate;</span>
     }
 
     public void setRevisionDate(Timestamp revisionDate) {
-<span class="nc" id="L196">        this.revisionDate = revisionDate;</span>
-<span class="nc" id="L197">    }</span>
+<span class="nc" id="L197">        this.revisionDate = revisionDate;</span>
+<span class="nc" id="L198">    }</span>
 
     public String getDealName() {
-<span class="nc" id="L200">        return dealName;</span>
+<span class="nc" id="L201">        return dealName;</span>
     }
 
     public void setDealName(String dealName) {
-<span class="nc" id="L204">        this.dealName = dealName;</span>
-<span class="nc" id="L205">    }</span>
+<span class="nc" id="L205">        this.dealName = dealName;</span>
+<span class="nc" id="L206">    }</span>
 
     public String getDealType() {
-<span class="nc" id="L208">        return dealType;</span>
+<span class="nc" id="L209">        return dealType;</span>
     }
 
     public void setDealType(String dealType) {
-<span class="nc" id="L212">        this.dealType = dealType;</span>
-<span class="nc" id="L213">    }</span>
+<span class="nc" id="L213">        this.dealType = dealType;</span>
+<span class="nc" id="L214">    }</span>
 
     public String getSourceListId() {
-<span class="nc" id="L216">        return sourceListId;</span>
+<span class="nc" id="L217">        return sourceListId;</span>
     }
 
     public void setSourceListId(String sourceListId) {
-<span class="nc" id="L220">        this.sourceListId = sourceListId;</span>
-<span class="nc" id="L221">    }</span>
+<span class="nc" id="L221">        this.sourceListId = sourceListId;</span>
+<span class="nc" id="L222">    }</span>
 
     public String getSide() {
-<span class="nc" id="L224">        return side;</span>
+<span class="nc" id="L225">        return side;</span>
     }
 
     public void setSide(String side) {
-<span class="nc" id="L228">        this.side = side;</span>
-<span class="nc" id="L229">    }</span>
+<span class="nc" id="L229">        this.side = side;</span>
+<span class="nc" id="L230">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

@@ -1,57 +1,82 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" 
+<html xmlns="http://www.w3.org/1999/xhtml"
 	  xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="utf-8"/>
-<title>Home</title>
-<link rel="stylesheet" href="../../css/bootstrap.min.css" >
+	<meta charset="utf-8"/>
+	<title>Rating List</title>
+	<link rel="stylesheet" href="../../css/bootstrap.min.css">
 </head>
 <body>
-
-<div class="container">
-	<div class="row">
-		<div class="col-6">
-			<a href="/bidList/list">Bid List</a>&nbsp;|&nbsp;
-			<a href="/curvePoint/list">Curve Points</a>&nbsp;|&nbsp;
-			<a href="/rating/list">Ratings</a>&nbsp;|&nbsp;
-			<a href="/trade/list">Trade</a>&nbsp;|&nbsp;
-			<a href="/rule/list">Rule</a>
+<div class="container-fluid vh-100">
+	<div class="row h-100">
+		<!-- Partie gauche -->
+		<div class="col-md-4 d-flex flex-column justify-content-center align-items-center bg-dark text-white">
+			<h2 class="text-center">User Interface<br/>Functionality</h2>
+			<p class="mt-3">Rating 4.3</p>
 		</div>
-		<div class="col-6 text-right">
 
-			<form th:action="@{/app-logout}" method="POST">
-				<input type="submit" value="Logout"/>
-			</form>
-		</div>
-	</div>
-	<div class="row"><h2>Rating List</h2></div>
-	<div class="row">
-		<a href="/rating/add" class="btn btn-primary btn-sm">Add New</a>
-		<table class="table table-bordered">
-			<thead>
+		<!-- Partie droite -->
+		<div class="col-md-8 d-flex flex-column p-4 position-relative">
+			<!-- Navigation + utilisateur -->
+			<div class="d-flex justify-content-between align-items-center mb-3">
+				<div>
+					<a href="/">Home</a>&nbsp;|&nbsp;
+					<a href="/bidList/list">Bid List</a>&nbsp;|&nbsp;
+					<a href="/curvePoint/list">Curve Points</a>&nbsp;|&nbsp;
+					<a href="/rating/list">Ratings</a>&nbsp;|&nbsp;
+					<a href="/trade/list">Trade</a>&nbsp;|&nbsp;
+					<a href="/rule/list">Rule</a>&nbsp;|&nbsp;
+					<a href="/user/list">User</a>
+				</div>
+				<div class="text-end">
+                    <span th:if="${username != null}">
+                        Logged in user: <b th:text="${username}"></b>
+                    </span>
+					<form th:action="@{/app-logout}" method="POST" class="d-inline-block ms-2">
+						<input type="submit" value="Logout" class="btn btn-outline-secondary btn-sm"/>
+					</form>
+				</div>
+			</div>
+
+			<!-- Titre -->
+			<h3 class="text-center mb-3">Rating List Screen</h3>
+			<h4 class="mb-3">Rating List</h4>
+
+			<!-- Bouton Ajouter -->
+			<a href="/rating/add" class="btn btn-primary btn-sm mb-2 px-3 py-1">Add New</a>
+
+			<!-- Tableau -->
+			<table class="table table-bordered table-sm">
+				<thead class="table-light">
 				<tr>
 					<th>Id</th>
-					<th>MoodysRating</th>
-					<th>SandPRating</th>
-					<th>FitchRating</th>
+					<th>Moodys Rating</th>
+					<th>SandP Rating</th>
+					<th>Fitch Rating</th>
 					<th>Order</th>
 					<th>Action</th>
 				</tr>
-			</thead>
-			<tbody>
+				</thead>
+				<tbody>
 				<tr th:each="rating : ${ratings}">
-					<td style="width: 10%" th:text="${rating.id}"></td>
+					<td th:text="${rating.id}"></td>
 					<td th:text="${rating.moodysRating}"></td>
 					<td th:text="${rating.sandPRating}"></td>
 					<td th:text="${rating.fitchRating}"></td>
 					<td th:text="${rating.orderNumber}"></td>
-					<td style="width: 15%" class="text-center">
-						<a th:href="@{/rating/update/{id}(id=${rating.id})}">Edit</a>&nbsp;|&nbsp;
+					<td class="text-center">
+						<a th:href="@{/rating/update/{id}(id=${rating.id})}">Edit</a> |
 						<a th:href="@{/rating/delete/{id}(id=${rating.id})}">Delete</a>
 					</td>
 				</tr>
-			</tbody>
-		</table>
+				</tbody>
+			</table>
+
+			<!-- Logo Poseidon -->
+			<div class="position-absolute bottom-0 end-0 m-3">
+				<img src="/images/logo.png" alt="Poseidon Logo" style="height: 50px;">
+			</div>
+		</div>
 	</div>
 </div>
 </body>

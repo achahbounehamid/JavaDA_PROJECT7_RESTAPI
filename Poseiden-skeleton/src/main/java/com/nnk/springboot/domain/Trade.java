@@ -3,6 +3,7 @@ package com.nnk.springboot.domain;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import java.sql.Timestamp;
+import jakarta.validation.constraints.Min;
 
 @Entity
 @Table(name = "trade")

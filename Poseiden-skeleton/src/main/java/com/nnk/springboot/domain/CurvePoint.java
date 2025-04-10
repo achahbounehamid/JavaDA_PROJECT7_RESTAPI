@@ -3,7 +3,7 @@ package com.nnk.springboot.domain;
 import jakarta.persistence.*;
 import javax.validation.constraints.*;
 import java.sql.Timestamp;
-
+import jakarta.validation.constraints.Min;
 @Entity
 @Table(name = "curvepoint")
 public class CurvePoint {
