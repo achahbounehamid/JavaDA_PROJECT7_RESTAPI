@@ -2,13 +2,14 @@ package com.nnk.springboot.domain;
 
 import jakarta.persistence.*;
 import javax.validation.constraints.*;
-import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.Pattern;
+
 
 @Entity
 @Table(name = "users")
 public class User {
     @Id
-    @Min(1)
+
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Integer id;
     @NotBlank(message = "Username is mandatory")

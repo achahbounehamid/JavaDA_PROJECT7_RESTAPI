@@ -2,14 +2,14 @@ package com.nnk.springboot.domain;
 
 import jakarta.persistence.*;
 import javax.validation.constraints.*;
-import jakarta.validation.constraints.Min;
+
 
 @Entity
 @Table(name = "rating")
 public class Rating {
 
     @Id
-    @Min(1)
+
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 

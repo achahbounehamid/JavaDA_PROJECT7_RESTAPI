@@ -1,0 +1,6 @@
+com\nnk\springboot\serviceTest\UserServiceTest.class
+com\nnk\springboot\serviceTest\BidListServiceTest.class
+com\nnk\springboot\serviceTest\RuleServiceTest.class
+com\nnk\springboot\serviceTest\CurvePointServiceTest.class
+com\nnk\springboot\serviceTest\RatingServiceTest.class
+com\nnk\springboot\serviceTest\TradeServiceTest.class

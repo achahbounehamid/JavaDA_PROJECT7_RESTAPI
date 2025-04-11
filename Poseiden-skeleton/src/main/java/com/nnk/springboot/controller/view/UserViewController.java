@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+
+
 @Controller
 @RequestMapping("/user")
 public class UserViewController {
@@ -19,30 +21,31 @@ public class UserViewController {
     @Autowired
     private UserService userService;
 
-    // ✅ Afficher la liste des utilisateurs
+    // Afficher la liste des utilisateurs
     @GetMapping("/list")
     public String userList(Model model) {
         model.addAttribute("users", userService.findAll());
         return "user/list";
     }
 
-    // ✅ Afficher le formulaire d’ajout
+    //  Afficher le formulaire d’ajout
     @GetMapping("/add")
     public String showAddForm(User user) {
         return "user/add";
     }
 
-    // ✅ Enregistrer un nouvel utilisateur
+    //  Enregistrer un nouvel utilisateur
     @PostMapping("/validate")
     public String validateUser(@Valid User user, BindingResult result, Model model) {
         if (result.hasErrors()) {
             return "user/add";
         }
         userService.save(user);
+//        redirectAttributes.addFlashAttribute("successMessage", "User successfully created.");
         return "redirect:/user/list";
     }
 
-    // ✅ Afficher le formulaire de mise à jour
+    // Afficher le formulaire de mise à jour
     @GetMapping("/update/{id}")
     public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
         User user = userService.findById(id)
@@ -52,7 +55,7 @@ public class UserViewController {
         return "user/update";
     }
 
-    // ✅ Enregistrer la mise à jour
+    //  Enregistrer la mise à jour
     @PostMapping("/update/{id}")
     public String updateUser(@PathVariable("id") Integer id, @Valid User user, BindingResult result) {
         if (result.hasErrors()) {
@@ -63,7 +66,7 @@ public class UserViewController {
         return "redirect:/user/list";
     }
 
-    // ✅ Supprimer un utilisateur
+    // Supprimer un utilisateur
     @GetMapping("/delete/{id}")
     public String deleteUser(@PathVariable("id") Integer id) {
         userService.deleteById(id);

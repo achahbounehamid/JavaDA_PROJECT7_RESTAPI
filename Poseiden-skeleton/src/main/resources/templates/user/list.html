@@ -27,13 +27,20 @@
 					<a href="/user/list">User</a>
 				</div>
 				<div class="text-end">
-					<a href="/">Home</a>&nbsp;|&nbsp;<a href="/login">Login</a>
+                    <span th:if="${username != null}">
+                        Logged in user: <b th:text="${username}"></b>
+                    </span>
+					<form th:action="@{/app/logout}" method="POST" class="d-inline-block ms-2">
+						<input type="submit" value="Logout" class="btn btn-outline-secondary btn-sm"/>
+					</form>
 				</div>
 			</div>
 
 			<h3 class="text-center mb-3">User List Screen</h3>
 			<h4 class="mb-3">User List</h4>
-
+<!--			<div th:if="${successMessage}" class="alert alert-success" role="alert">-->
+<!--				<p th:text="${successMessage}"></p>-->
+<!--			</div>-->
 			<a href="/user/add" class="btn btn-primary btn-sm mb-2 px-3 py-1">Add New</a>
 
 			<table class="table table-bordered table-sm">
@@ -61,9 +68,9 @@
 			</table>
 
 			<!-- Logo -->
-			<div class="position-absolute bottom-0 end-0 m-3">
-				<img src="/images/logo.png" alt="Poseidon Logo" style="height: 50px;">
-			</div>
+<!--			<div class="position-absolute bottom-0 end-0 m-3">-->
+<!--				<img src="../../static/css/imag/logo.PNG" alt="Poseidon Logo" style="height: 60px;">-->
+<!--			</div>-->
 		</div>
 	</div>
 </div>

@@ -59,6 +59,7 @@ public class SecurityConfig {
                                 "/api/user/add",
                                 "/error"
                         ).permitAll()
+                        .requestMatchers("/admin/**").hasRole("ADMIN")
                         .anyRequest().authenticated()
                 )
                 .formLogin(form -> form
@@ -77,7 +78,7 @@ public class SecurityConfig {
                 )
                 .userDetailsService(userDetailsService)
                 .exceptionHandling(exception -> exception
-                        .accessDeniedPage("/app/error")
+                        .accessDeniedPage("/403")
                 );
 
         return http.build();

@@ -31,7 +31,7 @@
                     <span th:if="${username != null}">
                         Logged in user: <b th:text="${username}"></b>
                     </span>
-					<form th:action="@{/app-logout}" method="POST" class="d-inline-block ms-2">
+					<form th:action="@{/app/logout}" method="POST" class="d-inline-block ms-2">
 						<input type="submit" value="Logout" class="btn btn-outline-secondary btn-sm"/>
 					</form>
 				</div>
@@ -73,9 +73,9 @@
 			</table>
 
 			<!-- Logo -->
-			<div class="position-absolute bottom-0 end-0 m-3">
-				<img src="/images/logo.png" alt="Poseidon Logo" style="height: 50px;">
-			</div>
+<!--			<div class="position-absolute bottom-0 end-0 m-3">-->
+<!--				<img src="../../static/css/imag/logo.PNG" alt="Poseidon Logo" style="height: 60px;">-->
+<!--			</div>-->
 		</div>
 	</div>
 </div>

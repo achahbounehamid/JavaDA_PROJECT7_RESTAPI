@@ -3,14 +3,14 @@ package com.nnk.springboot.domain;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import java.sql.Timestamp;
-import jakarta.validation.constraints.Min;
+
 
 @Entity
 @Table(name = "trade")
 public class Trade {
 
     @Id
-    @Min(1)
+
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer tradeId;
 
