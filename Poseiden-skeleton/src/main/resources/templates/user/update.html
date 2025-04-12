@@ -35,8 +35,20 @@
 					<div class="mb-3">
 						<label for="password" class="form-label">Password</label>
 						<input type="password" th:field="*{password}" id="password" class="form-control" placeholder="Password">
+
+						<small class="form-text text-muted">
+							Le mot de passe doit contenir au moins :
+							<ul class="mb-1 ps-3">
+								<li>8 caractères</li>
+								<li>1 lettre majuscule</li>
+								<li>1 chiffre</li>
+								<li>1 symbole (@, $, !, %, *, ?, &...)</li>
+							</ul>
+						</small>
+
 						<p class="text-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></p>
 					</div>
+
 
 					<div class="mb-4">
 						<label class="form-label">Role</label><br>

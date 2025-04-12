@@ -14,11 +14,13 @@ import jakarta.validation.constraints.Pattern;
     private Integer id;
     @NotBlank(message = &quot;Username is mandatory&quot;)
     private String username;
+
+    @NotBlank(message = &quot;Password is mandatory&quot;)
     @Pattern(
             regexp = &quot;^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[@$!%*?&amp;])[A-Za-z\\d@$!%*?&amp;]{8,}$&quot;,
             message = &quot;Le mot de passe doit contenir au moins 8 caractères, une majuscule, un chiffre et un symbole.&quot;
     )
-    @NotBlank(message = &quot;Password is mandatory&quot;)
+
     private String password;
     @NotBlank(message = &quot;FullName is mandatory&quot;)
     private String fullname;
@@ -26,43 +28,43 @@ import jakarta.validation.constraints.Pattern;
     private String role;
 
     public Integer getId() {
-<span class="fc" id="L29">        return id;</span>
+<span class="fc" id="L31">        return id;</span>
     }
 
     public void setId(Integer id) {
-<span class="fc" id="L33">        this.id = id;</span>
-<span class="fc" id="L34">    }</span>
+<span class="fc" id="L35">        this.id = id;</span>
+<span class="fc" id="L36">    }</span>
 
     public String getUsername() {
-<span class="nc" id="L37">        return username;</span>
+<span class="nc" id="L39">        return username;</span>
     }
 
     public void setUsername(String username) {
-<span class="fc" id="L41">        this.username = username;</span>
-<span class="fc" id="L42">    }</span>
+<span class="fc" id="L43">        this.username = username;</span>
+<span class="fc" id="L44">    }</span>
 
     public String getPassword() {
-<span class="fc" id="L45">        return password;</span>
+<span class="fc" id="L47">        return password;</span>
     }
 
     public void setPassword(String password) {
-<span class="fc" id="L49">        this.password = password;</span>
-<span class="fc" id="L50">    }</span>
+<span class="fc" id="L51">        this.password = password;</span>
+<span class="fc" id="L52">    }</span>
 
     public String getFullname() {
-<span class="nc" id="L53">        return fullname;</span>
+<span class="nc" id="L55">        return fullname;</span>
     }
 
     public void setFullname(String fullname) {
-<span class="nc" id="L57">        this.fullname = fullname;</span>
-<span class="nc" id="L58">    }</span>
+<span class="nc" id="L59">        this.fullname = fullname;</span>
+<span class="nc" id="L60">    }</span>
 
     public String getRole() {
-<span class="nc" id="L61">        return role;</span>
+<span class="nc" id="L63">        return role;</span>
     }
 
     public void setRole(String role) {
-<span class="nc" id="L65">        this.role = role;</span>
-<span class="nc" id="L66">    }</span>
+<span class="nc" id="L67">        this.role = role;</span>
+<span class="nc" id="L68">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

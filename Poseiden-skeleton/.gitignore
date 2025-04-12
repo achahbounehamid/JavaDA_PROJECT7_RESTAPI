@@ -1,0 +1,2 @@
+# Empêche de versionner les variables sensibles
+.env

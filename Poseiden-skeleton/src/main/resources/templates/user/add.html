@@ -33,9 +33,19 @@
 
 					<div class="mb-3">
 						<label for="password" class="form-label">Password</label>
-						<input type="password" th:field="*{password}" id="password" class="form-control" placeholder="Password">
+						<input type="password" th:field="*{password}" id="password" class="form-control" placeholder="Password" oninput="checkPasswordRules()">
+
+						<div class="form-text">Le mot de passe doit contenir :</div>
+						<ul id="password-rules" class="form-text ps-3 mb-2">
+							<li id="rule-length" class="text-muted">Minimum 8 caractères</li>
+							<li id="rule-uppercase" class="text-muted">Une lettre majuscule</li>
+							<li id="rule-digit" class="text-muted">Un chiffre</li>
+							<li id="rule-symbol" class="text-muted">Un symbole (@, $, !, %, *, ?, &...)</li>
+						</ul>
+
 						<p class="text-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></p>
 					</div>
+
 
 					<div class="mb-4">
 						<label class="form-label">Role</label><br>

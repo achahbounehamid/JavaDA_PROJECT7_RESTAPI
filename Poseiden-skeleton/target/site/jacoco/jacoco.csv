@@ -13,6 +13,7 @@ spring-boot-skeleton,com.nnk.springboot.controller.view,TradeViewController,69,0
 spring-boot-skeleton,com.nnk.springboot.controller.view,RatingViewController,69,0,4,0,19,0,10,0,8,0
 spring-boot-skeleton,com.nnk.springboot.controller.view,BidListViewController,73,0,4,0,19,0,10,0,8,0
 spring-boot-skeleton,com.nnk.springboot.controller.view,CurvePointViewController,67,0,4,0,19,0,10,0,8,0
+spring-boot-skeleton,com.nnk.springboot.controller.view,AccessDeniedController,10,0,0,0,3,0,2,0,2,0
 spring-boot-skeleton,com.nnk.springboot.controller.view,CustomErrorController,30,0,4,0,9,0,4,0,2,0
 spring-boot-skeleton,com.nnk.springboot.service,TradeService,0,23,0,0,0,6,0,5,0,5
 spring-boot-skeleton,com.nnk.springboot.service,RuleService,0,23,0,0,0,6,0,5,0,5
