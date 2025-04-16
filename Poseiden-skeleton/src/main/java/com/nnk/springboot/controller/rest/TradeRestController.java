@@ -25,12 +25,12 @@ public class TradeRestController {
     }
 
     @PostMapping("/add")
-    public ResponseEntity<Trade> addTrade(@RequestBody Trade trade) {
+    public ResponseEntity<Trade> addTrade(@RequestBody @Valid Trade trade) {
         return ResponseEntity.ok(tradeService.save(trade));
     }
 
     @PutMapping("/update/{id}")
-    public ResponseEntity<Trade> updateTrade(@PathVariable Integer id, @RequestBody Trade trade) {
+    public ResponseEntity<Trade> updateTrade(@PathVariable Integer id, @RequestBody @Valid Trade trade) {
         trade.setTradeId(id);
         return ResponseEntity.ok(tradeService.save(trade));
     }

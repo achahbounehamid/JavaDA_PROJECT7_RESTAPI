@@ -9,13 +9,10 @@
 <body>
 <div class="container-fluid vh-100">
 	<div class="row h-100">
-		<!-- Sidebar gauche -->
 		<div class="col-md-4 d-flex flex-column justify-content-center align-items-center bg-dark text-white">
 			<h2 class="text-center">User Interface<br/>Functionality</h2>
 			<p class="mt-3">Bid 2.4</p>
 		</div>
-
-		<!-- Contenu droit -->
 		<div class="col-md-8 d-flex flex-column justify-content-start align-items-center position-relative p-4">
 			<h3 class="mb-4">Update Bid Screen</h3>
 			<div class="w-100" style="max-width: 500px;">
@@ -37,21 +34,13 @@
 						<p class="text-danger" th:if="${#fields.hasErrors('bidQuantity')}" th:errors="*{bidQuantity}"></p>
 					</div>
 
-					<!-- Hidden ID -->
 					<input type="hidden" th:field="*{bidListId}"/>
-
-					<!-- Boutons -->
 					<div class="d-flex justify-content-start gap-2">
 						<a class="btn btn-danger" href="/bidList/list">Cancel</a>
 						<input class="btn btn-primary" type="submit" value="Update BidList">
 					</div>
 				</form>
 			</div>
-
-			<!-- Logo Poseidon -->
-<!--			<div class="position-absolute bottom-0 end-0 m-3">-->
-<!--				<img src="/images/logo.png" alt="Poseidon Logo" style="height: 50px;">-->
-<!--			</div>-->
 		</div>
 	</div>
 </div>

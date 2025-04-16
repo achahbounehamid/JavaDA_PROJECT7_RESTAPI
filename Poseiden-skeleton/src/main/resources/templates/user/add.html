@@ -74,5 +74,24 @@
 		</div>
 	</div>
 </div>
+<script>
+	function checkPasswordRules() {
+		const password = document.getElementById("password").value;
+
+		const rules = {
+			"rule-length": password.length >= 8,
+			"rule-uppercase": /[A-Z]/.test(password),
+			"rule-digit": /\d/.test(password),
+			"rule-symbol": /[@$!%*?&]/.test(password)
+		};
+
+		for (const [id, isValid] of Object.entries(rules)) {
+			const el = document.getElementById(id);
+			el.classList.remove("text-muted", "text-danger", "text-success");
+			el.classList.add(isValid ? "text-success" : "text-danger");
+		}
+	}
+</script>
+
 </body>
 </html>

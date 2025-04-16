@@ -7,7 +7,7 @@ spring-boot-skeleton,com.nnk.springboot.controller.rest,RatingRestController,33,
 spring-boot-skeleton,com.nnk.springboot.controller.rest,BidListRestController,40,0,0,0,10,0,6,0,6,0
 spring-boot-skeleton,com.nnk.springboot.controller.rest,LoginController,85,0,4,0,20,0,7,0,5,0
 spring-boot-skeleton,com.nnk.springboot.controller.rest,CurvePointRestController,31,0,0,0,8,0,5,0,5,0
-spring-boot-skeleton,com.nnk.springboot.controller.view,UserViewController,72,0,4,0,20,0,10,0,8,0
+spring-boot-skeleton,com.nnk.springboot.controller.view,UserViewController,86,0,4,0,22,0,10,0,8,0
 spring-boot-skeleton,com.nnk.springboot.controller.view,RuleViewController,69,0,4,0,19,0,10,0,8,0
 spring-boot-skeleton,com.nnk.springboot.controller.view,TradeViewController,69,0,4,0,19,0,10,0,8,0
 spring-boot-skeleton,com.nnk.springboot.controller.view,RatingViewController,69,0,4,0,19,0,10,0,8,0

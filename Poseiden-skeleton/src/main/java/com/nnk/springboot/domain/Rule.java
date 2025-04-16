@@ -1,6 +1,7 @@
 package com.nnk.springboot.domain;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 
 import javax.validation.constraints.NotNull;
 
@@ -12,7 +13,7 @@ public class Rule {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-   @NotNull(message = "Name is mandatory")
+    @NotBlank(message = "Name is mandatory")
     private String name;
 
    @NotNull(message = "description is mandatory")

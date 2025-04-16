@@ -25,12 +25,12 @@ import java.util.List;
     }
 
     @PostMapping(&quot;/add&quot;)
-    public ResponseEntity&lt;Trade&gt; addTrade(@RequestBody Trade trade) {
+    public ResponseEntity&lt;Trade&gt; addTrade(@RequestBody @Valid Trade trade) {
 <span class="nc" id="L29">        return ResponseEntity.ok(tradeService.save(trade));</span>
     }
 
     @PutMapping(&quot;/update/{id}&quot;)
-    public ResponseEntity&lt;Trade&gt; updateTrade(@PathVariable Integer id, @RequestBody Trade trade) {
+    public ResponseEntity&lt;Trade&gt; updateTrade(@PathVariable Integer id, @RequestBody @Valid Trade trade) {
 <span class="nc" id="L34">        trade.setTradeId(id);</span>
 <span class="nc" id="L35">        return ResponseEntity.ok(tradeService.save(trade));</span>
     }
