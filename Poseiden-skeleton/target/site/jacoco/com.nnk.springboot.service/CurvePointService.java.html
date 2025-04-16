@@ -14,33 +14,25 @@ import java.util.Optional;
     @Autowired
     private CurvePointRepository curvePointRepository;
 
-    /**
-     * Sauvegarde ou met à jour un CurvePoint
-     */
+
     public CurvePoint save(CurvePoint curvePoint) {
-<span class="fc" id="L21">        return curvePointRepository.save(curvePoint);</span>
+<span class="fc" id="L19">        return curvePointRepository.save(curvePoint);</span>
     }
 
-    /**
-     * Récupère tous les CurvePoints
-     */
+
     public List&lt;CurvePoint&gt; findAll() {
-<span class="fc" id="L28">        return curvePointRepository.findAll();</span>
+<span class="fc" id="L24">        return curvePointRepository.findAll();</span>
     }
 
-    /**
-     * Trouve un CurvePoint par son ID
-     */
+
     public Optional&lt;CurvePoint&gt; findById(Integer id) {
-<span class="fc" id="L35">        return curvePointRepository.findById(id);</span>
+<span class="fc" id="L29">        return curvePointRepository.findById(id);</span>
     }
 
-    /**
-     * Supprime un CurvePoint par son ID
-     */
+
     public void deleteById(Integer id) {
-<span class="fc" id="L42">        curvePointRepository.deleteById(id);</span>
-<span class="fc" id="L43">    }</span>
+<span class="fc" id="L34">        curvePointRepository.deleteById(id);</span>
+<span class="fc" id="L35">    }</span>
 }
 
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>
